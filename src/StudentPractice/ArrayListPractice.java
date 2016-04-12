@@ -6,7 +6,9 @@
 package StudentPractice;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -33,5 +35,24 @@ public class ArrayListPractice {
          System.out.println(listItem);
      }
         System.out.println("current size of list: " + randomList.size());
-    }
+    
+    List gList = new ArrayList();
+    gList.add("hello");
+     gList.add("from");
+      gList.add("the");
+       gList.add("otherside");
+       for(Object o: gList)
+            System.out.println(o);
+    String two = (String) gList.get(1);
+        System.out.println(two);
+        
+        Set gSet = new HashSet();
+        gSet.add("hello");
+        List ggList = new ArrayList(gSet);
+        
+        String g =  (String) ggList.get(0);
+        
+        
+}
+    
 }

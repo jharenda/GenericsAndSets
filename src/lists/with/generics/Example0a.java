@@ -1,5 +1,4 @@
 package lists.with.generics;
-
 import java.util.*;
 
 public class Example0a {

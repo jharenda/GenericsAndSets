@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package StudentPractice;
 
 import java.util.Objects;
@@ -12,10 +8,11 @@ import java.util.Objects;
  * @author Jennifer
  */
 public class Dog {
+
     private String name;
     private int age;
     private int intellegenceRating;
-    private String favoriteFood; 
+    private String favoriteFood;
 
     public Dog(String name, int age, int intellegenceRating, String favoriteFood) {
         this.name = name;
@@ -65,7 +62,6 @@ public class Dog {
     public String toString() {
         return "Dog{" + "name=" + name + ", age=" + age + ", intellegenceRating=" + intellegenceRating + ", favoriteFood=" + favoriteFood + '}';
     }
-    
 
     public String getName() {
         return name;
@@ -98,7 +94,5 @@ public class Dog {
     public void setFavoriteFood(String favoriteFood) {
         this.favoriteFood = favoriteFood;
     }
-    
-     
-    
+
 }

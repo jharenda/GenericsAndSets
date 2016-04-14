@@ -71,9 +71,7 @@ public class Employee implements Comparable {
 
     @Override
     public int compareTo(Object other) {
-
         Employee o = (Employee) other;
-
         return new CompareToBuilder()
                 .append(this.ssn, o.ssn)
                 .toComparison();
@@ -83,15 +81,16 @@ public class Employee implements Comparable {
     public static void main(String[] args) {
         // make 4 employees
         Employee e1 = new Employee("Smith", "Jill", "222-11-1111");
+        // e2 will replace e1 in an map because they have the same key. Jill Smith shouldn't exist any more. 
         Employee e2 = new Employee("Smithe", "Bill", "222-11-1111");
         Employee e3 = new Employee("Green", "Paul", "111-22-2222");
         Employee e4 = new Employee("Cash", "Alice", "111-11-3333");
 
         // put employees in a hashMap
+        //map name should be plural(employees) 
         Map<String, Employee> employeeMap = new HashMap<>();
 
         employeeMap.put(e1.getSsn(), e1);
-
         employeeMap.put(e3.getSsn(), e3);
         employeeMap.put(e4.getSsn(), e4);
         employeeMap.put(e2.getSsn(), e2);
@@ -102,19 +101,14 @@ public class Employee implements Comparable {
         System.out.println(emp1.getFirstName());
 
         Employee emp2 = employeeMap.get(e2.getSsn());
-        System.out.println(emp2.getFirstName());
+        System.out.println(emp2);
         Employee emp3 = employeeMap.get(e3.getSsn());
         System.out.println(emp3.getFirstName());
         Employee emp4 = employeeMap.get(e4.getSsn());
         System.out.println(emp4.getFirstName());
-        // loop through keys
-        System.out.println("\nlooping through hashMap keys");
-        for (String key : employeeMap.keySet()) {
-            Employee emp = employeeMap.get(key);
-            System.out.println(emp);
-        }
+  
 // put keys in a set and then loop through those. 
-        System.out.println("\nkeys into a set first");
+        System.out.println("\n Looping through keys, put into a set first");
         Set<String> keys = employeeMap.keySet();
         for (String key : keys) {
             Employee found = employeeMap.get(key);
@@ -123,14 +117,13 @@ public class Employee implements Comparable {
 
 // loop through values 
         System.out.println("\nLoop through values of HashMap:");
-        for (Employee em : employeeMap.values()) {
+        Collection<Employee> v = employeeMap.values(); 
+        for (Employee em : v) {
             System.out.println(em);
         }
-//Tree map
-
+//Tree map- tree map only sort by key
         Map<String, Employee> treeMap = new TreeMap<>();
         treeMap.put(e1.getSsn(), e1);
-
         treeMap.put(e3.getSsn(), e3);
         treeMap.put(e4.getSsn(), e4);
         treeMap.put(e2.getSsn(), e2);
@@ -154,7 +147,7 @@ public class Employee implements Comparable {
         treeSet.add(e4);
         treeSet.add(e1);
         for (Employee em : treeSet) {
-            System.out.println(em);
+            System.out.println( "hello " + em);
         }
 
         System.out.println("\nOrdered by first name (alternative sort):");
